@@ -34,8 +34,8 @@ const featuredProjectsData = [
 const skillsData = [
   { name: 'React',  icon: <Image src="/icons/iconReact.svg" alt="React icon" width={25} height={25} className="mr-2" /> },
   { name: 'Ionic', icon: <Image src="/icons/iconIonic.svg" alt="ionic icon" width={25} height={25} className="mr-2" /> },
-  { name: 'Firebase' , icon: <Image src="/icons/iconFirebase.svg" alt="Firebase icon" width={25} height={25} className="mr-2" />  }, // Custom Firebase Icon
-  { name: 'Node.js ',  icon: <Image src="/icons/iconNodeJs.svg" alt="Node icon" width={25} height={25} className="mr-2" />},
+  { name: 'Firebase' , icon: <Image src="/icons/iconFirebase.svg" alt="Firebase icon" width={25} height={25} className="mr-2" />  }, 
+  { name: 'Node.js ',  icon: <Image src="/icons/iconNodejs.svg" alt="Node icon" width={25} height={25} className="mr-2" />},
   { name: 'JavaScript ',  icon: <Image src="/icons/iconJavaScrip.svg" alt="JavaScript icon" width={25} height={25} className="mr-2" />},
   { name: 'HTML5 & CSS3',  icon: <Image src="/icons/iconHtml.svg" alt="Html icon" width={25} height={25} className="mr-2" />},
   { name: 'Tailwind CSS',  icon: <Image src="/icons/iconTailCss.svg" alt="TailwindCss icon" width={25} height={25} className="mr-2" />},
@@ -46,8 +46,8 @@ const skillsData = [
 const skillsDataLight = [
   { name: 'React',  icon: <Image src="/icons/iconReact2.svg" alt="React icon" width={25} height={25} className="mr-2" /> },
   { name: 'Ionic', icon: <Image src="/icons/iconIonic2.svg" alt="ionic icon" width={25} height={25} className="mr-2" /> },
-  { name: 'Firebase' , icon: <Image src="/icons/iconFirebase2.png" alt="Firebase icon" width={25} height={25} className="mr-2" />  }, // Custom Firebase Icon
-  { name: 'Node.js ',  icon: <Image src="/icons/iconNodeJs2.svg" alt="Node icon" width={25} height={25} className="mr-2" />},
+  { name: 'Firebase' , icon: <Image src="/icons/iconFirebase2.png" alt="Firebase icon" width={25} height={25} className="mr-2" />  }, 
+  { name: 'Node.js ',  icon: <Image src="/icons/iconNodejs2.svg" alt="Node icon" width={25} height={25} className="mr-2" />},
   { name: 'JavaScript ',  icon: <Image src="/icons/iconJavaScrip2.svg" alt="JavaScript icon" width={25} height={25} className="mr-2" />},
   { name: 'HTML5 & CSS3',  icon: <Image src="/icons/iconHtml2.svg" alt="Html icon" width={25} height={25} className="mr-2" />},
   { name: 'Tailwind CSS',  icon: <Image src="/icons/iconTailCss2.svg" alt="TailwindCss icon" width={25} height={25} className="mr-2" />},
