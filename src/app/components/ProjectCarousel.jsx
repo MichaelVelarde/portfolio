@@ -14,22 +14,22 @@ const projects = [
   {
     id: 2,
     title: 'POS System for Café Typica',
-    desc: "Engineered and delivered a custom Electron-based Point of Sale (POS) software solution to optimize sales operations and improve business efficiency for a prominent coffee restaurant in Bolivia. The system provided comprehensive management tools and integrated smoothly with the restaurant's workflow.",
+    desc: "Custom Electron-based Point of Sale (POS) software solution to optimize sales operations and improve business efficiency for a prominent coffee restaurant in Bolivia. The system provided comprehensive management tools and integrated smoothly with the restaurant's workflow.",
     image: '/projects/typica.png',
     tech: ['Electron', 'React', 'Firebase','HTML', 'CSS']
   },
   {
     id: 3,
     title: 'Mining Production Control System',
-    desc: 'Developed a comprehensive React & Electron desktop application for the administration and control of mining production as part of my graduation project. It ensures accurate tracking of employees, production, sales, machine maintenance, and expenses for the mineral processing company Caroco GEMA.',
+    desc: 'React & Electron desktop application for the administration and control of mining production as part of my graduation project. It ensures accurate tracking of employees, production, sales, machine maintenance, and expenses for the mineral processing company Caroco GEMA.',
     image: '/projects/caroco.png',
     tech: ['React', 'Electron', 'MongoDB', 'Node.js', 'HTML', 'CSS']
   },
   {
     id: 4,
     title: 'Application in Ionic for storage control',
-    desc: "Developed an application aimed at improving company management and organization for enhanced efficiency, utilizing Ionic and Firebase, making the application accessible on both Android and iOS platforms",
-    image: '/projects/3dApp.jpg',
+    desc: "Application aimed at improving company management and organization for enhanced efficiency, utilizing Ionic and Firebase, making the application accessible on both Android and iOS platforms",
+    image: '/projects/3dApp.png',
     tech: ['Ionic', 'Firebase', 'Github']
   },
 

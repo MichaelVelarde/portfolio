@@ -1,5 +1,26 @@
-// pages/about.js or app/about/page.js
-import { Brain, Sparkles, Briefcase, Target, Code, Star } from 'lucide-react'; // Import some icons
+
+import { Brain, Sparkles, Briefcase, Target, Code, Star, GraduationCap } from 'lucide-react'; // Import some icons
+
+const educationData = [
+  {
+    degree: 'Bachelor of Science in Software Engineering',
+    institution: 'Universidad Privada Boliviana (UPB)',
+    period: '2024',
+    description: 'My degree provided a robust, software-centric education built upon a strong foundation in mathematics and physics. The curriculum focused on equipping me with the tools of a modern software engineer, from mastering Agile methodologies and design patterns to a deep dive into algorithms, data structures, and both Object-Oriented and Functional programming. This was rounded out by practical experience in computer networks, robotics, and database management with SQL and NoSQL technologies.'
+  },
+  {
+    degree: 'Responsive Web Design',
+    institution: 'FreeCodeCamp',
+    period: '2023',
+    description: 'A comprehensive certification focused on the principles and practical application of building accessible and fully responsive websites using modern HTML5 and CSS.'
+  },
+  {
+    degree: 'Neural Network and Deep Learning',
+    institution: 'Coursera',
+    period: '2021',
+    description: 'A rigorous Coursera certification focused on the foundational theory and practical application of building deep neural networks, providing a core understanding of modern AI.'
+  },
+];
 
 const journeyParagraphs = [
   "I'm a software engineer with a deep-seated passion for crafting user-friendly applications and tackling real-world problems through code. My journey into tech was driven by a fascination with how software can simplify complex tasks and enhance everyday life.",
@@ -11,7 +32,6 @@ const projectsWorkedOn = [
   { name: 'Alterations Booking Ap', tech: 'React, Vercel, Github', description: 'A comprehensive desktop application for managing orders, inventory, and sales.' },
   { name: 'POS System for Café', tech: 'React, Firebase, Electron', description: 'A robust point-of-sale system built with React and Firebase, streamlining orders and payments.' },
   { name: 'Caroco GEMA application', tech: 'Next.js, React, MongoDB , Electron', description: 'Developed a React application for the administration and control of mining production as part of my graduation project.' },
-  // Add more projects as needed
 ];
 
 const skillsData = [
@@ -73,7 +93,27 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* My Skills - RPG Style Section */}
+       {/* Education Section */}
+        <section id="education" className="space-y-6">
+          <h2 className="text-2xl sm:text-3xl font-bold flex items-center text-slate-900 dark:text-white">
+            <GraduationCap size={28} className="mr-3 text-blue-500" />
+            Education
+          </h2>
+          <div className="space-y-8">
+            {educationData.map((edu, index) => (
+              <div key={index} className="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="flex justify-between items-start">
+                  <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-1">{edu.degree}</h3>
+                  <span className="text-sm font-medium text-slate-500 dark:text-slate-400 text-right">{edu.period}</span>
+                </div>
+                <p className="text-md text-slate-600 dark:text-slate-300 font-medium mb-2">{edu.institution}</p>
+                <p className="text-slate-700 dark:text-slate-300">{edu.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* My Skills  */}
         <section id="skills-rpg" className="space-y-6">
           <h2 className="text-2xl sm:text-3xl font-bold flex items-center text-slate-900 dark:text-white">
             <Brain size={28} className="mr-3 text-blue-500" />
@@ -105,19 +145,6 @@ export default function AboutPage() {
             ))}
           </div>
         </section>
-
-        {/* Optional: Philosophy/Values Section Example */}
-        {/* <section id="philosophy" className="space-y-6">
-          <h2 className="text-2xl sm:text-3xl font-bold flex items-center text-slate-900 dark:text-white">
-            <Target size={28} className="mr-3 text-blue-500" />
-            My Approach
-          </h2>
-          <div className="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-lg">
-            <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              I believe in writing clean, maintainable code and fostering collaborative environments. My focus is always on delivering value to the end-user by creating intuitive and performant applications. I embrace challenges as opportunities for growth and innovation.
-            </p>
-          </div>
-        </section> */}
 
       </div>
     </div>

@@ -7,8 +7,9 @@ export default function UserForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '', // Optional
+    phone: '', 
     message: '',
+    state: ''
   });
 
   const [status, setStatus] = useState({
@@ -46,8 +47,9 @@ export default function UserForm() {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          phone: formData.phone, // Send phone if provided
+          phone: formData.phone, 
           message: formData.message,
+          state : formData.state
         }),
       });
 
@@ -95,6 +97,18 @@ export default function UserForm() {
             />
           </div>
         ))}
+        <div className="hidden" aria-hidden="true">
+          <label htmlFor="state">State</label>
+          <input
+            type="text"
+            id="state"
+            name="state"
+            tabIndex="-1"
+            autoComplete="off"
+            onChange={handleChange} // You can still use your handler
+            value={formData.state || ''}
+          />
+        </div>
 
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
@@ -104,6 +118,8 @@ export default function UserForm() {
             id="message"
             name="message"
             rows="5"
+            minLength={10}
+            maxLength={2000}
             value={formData.message}
             onChange={handleChange}
             placeholder="How can I help you today?"
