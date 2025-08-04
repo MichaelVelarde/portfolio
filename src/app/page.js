@@ -80,7 +80,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 py-16 md:py-24 space-y-8 bg-gradient-to-br from-white via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950">
         <h1 className="text-5xl md:text-7xl font-extrabold">
-          <span className="block">Hi, I&apos;m Carlos.</span> {/* CORRECTED */}
+          <span className="block">Hi, I&apos;m Michael.</span> {/* CORRECTED */}
           <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-500 dark:to-cyan-400 mt-2">
             Full-Stack Developer.
           </span>

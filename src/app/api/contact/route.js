@@ -9,6 +9,7 @@ const ratelimit = new Ratelimit({
   limiter: Ratelimit.slidingWindow(3, '60 s'), // Allow 3 requests per 60 seconds
   analytics: true,
 });
+
 const contactFormSchema = z.object({
   name: z.string().trim().min(2, { message: 'Name must be at least 2 characters.' }).max(50),
   email: z.string().email({ message: 'Invalid email address.' }),

@@ -7,7 +7,7 @@ const projects = [
   {
     id: 1,
     title: 'Alterations Landing Page',
-    desc: 'Developed and deployed a modern landing page to enhance the online presence of an alterations business, improving customer engagement and accessibility',
+    desc: 'Developed and deployed a modern landing page to enhance the online presence of an alterations business, improving customer engagement and accessibility. Visit at alterationsbysdenka-paola.com',
     image: '/projects/alterations.png',
     tech: [ 'React', 'Vercel', 'Github','HTML', 'CSS']
   },
