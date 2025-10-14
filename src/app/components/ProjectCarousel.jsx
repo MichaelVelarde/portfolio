@@ -2,12 +2,13 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight, Code } from 'lucide-react'; // Using Lucide icons
+import ProjectModal from './ProjectModal';
 
 const projects = [
   {
     id: 1,
     title: 'Alterations Landing Page',
-    desc: 'Developed and deployed a modern landing page to enhance the online presence of an alterations business, improving customer engagement and accessibility. Visit at alterationsbysdenka-paola.com',
+    desc: 'Developed and deployed a modern landing page to enhance the online presence of an alterations business, improving customer engagement and accessibility.',
     image: '/projects/alterations.png',
     tech: [ 'React', 'Vercel', 'Github','HTML', 'CSS']
   },
@@ -39,6 +40,7 @@ const projects = [
 export default function ProjectCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const totalProjects = projects.length;
 
   const goToPrevious = () => {
@@ -134,6 +136,22 @@ export default function ProjectCarousel() {
         <p className="text-md sm:text-lg text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
           {currentProject.desc}
         </p>
+        <center>
+          <button
+            onClick={() => {
+              // If alterations (id 1) open external hosted link, otherwise open modal
+              if (currentProject.title.toLowerCase().includes('alterations')) {
+                // Replace with your real hosted URL
+                window.open('https://www.alterationsbysdenka-paola.com/services', '_blank', 'noreferrer');
+                return;
+              }
+              setIsModalOpen(true);
+            }}
+            className="ml-3 text-sm px-3 py-1 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition"
+          >
+            View more
+          </button>
+        </center>
 
         <div className="flex items-center justify-center text-lg font-semibold mb-3 text-slate-800 dark:text-slate-200">
           <Code size={22} className="mr-2 text-blue-500" />
@@ -150,6 +168,21 @@ export default function ProjectCarousel() {
           ))}
         </div>
       </div>
+      <ProjectModal
+        open={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title={currentProject.title}
+        images={(() => {
+          // map project id/title to folder images
+          const map = {
+            2: ['/projects/typica/1.png','/projects/typica/2.png','/projects/typica/3.png','/projects/typica/4.png','/projects/typica/5.png','/projects/typica/6.png'],
+            3: ['/projects/caroco/1.png','/projects/caroco/2.png','/projects/caroco/3.png','/projects/caroco/4.png','/projects/caroco/5.png','/projects/caroco/6.png'],
+            4: ['/projects/3dApp/1.png','/projects/3dApp/2.png','/projects/3dApp/3.png','/projects/3dApp/4.png'],
+            // Alterations is external link, so no images here
+          };
+          return map[currentProject.id] ?? [];
+        })()}
+      />
     </div>
   );
 }
