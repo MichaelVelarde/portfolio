@@ -1,14 +1,7 @@
 
 import nodemailer from 'nodemailer';
-import { Ratelimit } from '@upstash/ratelimit';
-import { Redis } from '@upstash/redis';
 import { z } from 'zod';
 
-const ratelimit = new Ratelimit({
-  redis: Redis.fromEnv(),
-  limiter: Ratelimit.slidingWindow(3, '60 s'), // Allow 3 requests per 60 seconds
-  analytics: true,
-});
 
 const contactFormSchema = z.object({
   name: z.string().trim().min(2, { message: 'Name must be at least 2 characters.' }).max(50),
@@ -32,20 +25,6 @@ export async function POST(req) {
   }
 
   const { name, email, message, phone } = result.data;
-
-  //Using redis to limit message from an IP 
-  const ip = req.ip ?? '127.0.0.1';
-  const { success, limit, reset, remaining } = await ratelimit.limit(ip);
-  if (!success) {
-    return new Response(JSON.stringify({ error: 'Too many requests. Please try again later.' }), {
-      status: 429,
-      headers: {
-        'X-RateLimit-Limit': limit.toString(),
-        'X-RateLimit-Remaining': remaining.toString(),
-        'X-RateLimit-Reset': reset.toString(),
-      },
-    });
-  }
 
   const transporter = nodemailer.createTransport({
     service: 'gmail', 
@@ -102,7 +81,7 @@ export async function POST(req) {
     text: mailText,
     html: mailHtml,
   };
-  
+
   try {
     await transporter.sendMail(mailOptions);
     return new Response(JSON.stringify({ success: true, message: 'Email sent successfully!' }), {
