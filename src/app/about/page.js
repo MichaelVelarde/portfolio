@@ -29,7 +29,16 @@ const journeyParagraphs = [
 ];
 
 const projectsWorkedOn = [
-  { name: 'Alterations Booking Ap', tech: 'React, Vercel, Github', description: 'A comprehensive desktop application for managing orders, inventory, and sales.' },
+  {
+  name: 'North Star Contractors Website Redesign',
+  description: 'Redesigned and launched a professional WordPress website for a construction company to improve brand credibility, user experience, and local SEO visibility.',
+  tech: 'WordPress, HTML, CSS, PHP, SEO'
+  },
+  {
+  name: 'Alterations Landing Web Page',
+  tech: 'React, Vercel, GitHub',
+  description: 'A fully responsive landing website designed to attract more clients, built with modern UI principles and best SEO practices to improve visibility and conversions.'
+},
   { name: 'POS System for Café', tech: 'React, Firebase, Electron', description: 'A robust point-of-sale system built with React and Firebase, streamlining orders and payments.' },
   { name: 'Caroco GEMA application', tech: 'Next.js, React, MongoDB , Electron', description: 'Developed a React application for the administration and control of mining production as part of my graduation project.' },
 ];
@@ -38,6 +47,7 @@ const skillsData = [
   { name: 'JavaScript', level: 10, icon: <Code size={18} className="mr-2 text-yellow-500" /> },
   { name: 'Python', level: 8, icon: <Code size={18} className="mr-2 text-green-500" /> },
   { name: 'React / Next.js', level: 9, icon: <Sparkles size={18} className="mr-2 text-sky-500" /> },
+  { name: 'Wordpress', level: 8, icon: <Sparkles size={18} className="mr-2 text-purple-500" /> },
   { name: 'HTML5 & CSS3', level: 9, icon: <Code size={18} className="mr-2 text-red-500" /> },
   { name: 'UI/UX Principles', level:8, icon: <Brain size={18} className="mr-2 text-purple-500" /> },
   { name: 'Git & GitHub', level: 8, icon: <Code size={18} className="mr-2 text-slate-500" /> },

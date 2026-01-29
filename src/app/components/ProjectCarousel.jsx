@@ -6,28 +6,35 @@ import ProjectModal from './ProjectModal';
 
 const projects = [
   {
-    id: 1,
+    id: 2,
+    title: 'North Star Contractors Website Redesign',
+    desc: 'Redesigned and launched a professional WordPress website for a construction company to improve brand credibility, user experience, and local SEO visibility.',
+    image: '/projects/northstar.png',
+    tech: ['WordPress', 'HTML', 'CSS', 'PHP', 'SEO']
+  },
+  {
+    id: 3,
     title: 'Alterations Landing Page',
     desc: 'Developed and deployed a modern landing page to enhance the online presence of an alterations business, improving customer engagement and accessibility.',
     image: '/projects/alterations.png',
     tech: [ 'React', 'Vercel', 'Github','HTML', 'CSS']
   },
   {
-    id: 2,
+    id: 4,
     title: 'POS System for Café Typica',
     desc: "Custom Electron-based Point of Sale (POS) software solution to optimize sales operations and improve business efficiency for a prominent coffee restaurant in Bolivia. The system provided comprehensive management tools and integrated smoothly with the restaurant's workflow.",
     image: '/projects/typica.png',
     tech: ['Electron', 'React', 'Firebase','HTML', 'CSS']
   },
   {
-    id: 3,
+    id: 5,
     title: 'Mining Production Control System',
     desc: 'React & Electron desktop application for the administration and control of mining production as part of my graduation project. It ensures accurate tracking of employees, production, sales, machine maintenance, and expenses for the mineral processing company Caroco GEMA.',
     image: '/projects/caroco.png',
     tech: ['React', 'Electron', 'MongoDB', 'Node.js', 'HTML', 'CSS']
   },
   {
-    id: 4,
+    id: 6,
     title: 'Application in Ionic for storage control',
     desc: "Application aimed at improving company management and organization for enhanced efficiency, utilizing Ionic and Firebase, making the application accessible on both Android and iOS platforms",
     image: '/projects/3dApp.png',
@@ -145,6 +152,11 @@ export default function ProjectCarousel() {
                 window.open('https://www.alterationsbysdenka-paola.com/services', '_blank', 'noreferrer');
                 return;
               }
+               if (currentProject.title.toLowerCase().includes('contractors')) {
+                // Replace with your real hosted URL
+                window.open('https://northstarcontractors.net/', '_blank', 'noreferrer');
+                return;
+              }
               setIsModalOpen(true);
             }}
             className="ml-3 text-sm px-3 py-1 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition"
@@ -175,9 +187,9 @@ export default function ProjectCarousel() {
         images={(() => {
           // map project id/title to folder images
           const map = {
-            2: ['/projects/typica/1.png','/projects/typica/2.png','/projects/typica/3.png','/projects/typica/4.png','/projects/typica/5.png','/projects/typica/6.png'],
-            3: ['/projects/caroco/1.png','/projects/caroco/2.png','/projects/caroco/3.png','/projects/caroco/4.png','/projects/caroco/5.png','/projects/caroco/6.png'],
-            4: ['/projects/3dApp/1.png','/projects/3dApp/2.png','/projects/3dApp/3.png','/projects/3dApp/4.png'],
+            4: ['/projects/typica/1.png','/projects/typica/2.png','/projects/typica/3.png','/projects/typica/4.png','/projects/typica/5.png','/projects/typica/6.png'],
+            5: ['/projects/caroco/1.png','/projects/caroco/2.png','/projects/caroco/3.png','/projects/caroco/4.png','/projects/caroco/5.png','/projects/caroco/6.png'],
+            6: ['/projects/3dApp/1.png','/projects/3dApp/2.png','/projects/3dApp/3.png','/projects/3dApp/4.png'],
             // Alterations is external link, so no images here
           };
           return map[currentProject.id] ?? [];
